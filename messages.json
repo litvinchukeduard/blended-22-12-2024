@@ -1,0 +1,104 @@
+[
+  {
+    "content": "Hello, John!",
+    "sending_time": "2024-12-22 19:34:39.416198",
+    "receiving_time": "None",
+    "author": {
+      "id": 2,
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "phone_number": "0987654321"
+    },
+    "recepient": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    }
+  },
+  {
+    "content": "Hello, Jane!",
+    "sending_time": "2024-12-22 19:34:39.416190",
+    "receiving_time": "None",
+    "author": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    },
+    "recepient": {
+      "id": 2,
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "phone_number": "0987654321"
+    }
+  },
+  {
+    "content": "Todo: finish homework",
+    "sending_time": "2024-12-22 19:34:39.416201",
+    "receiving_time": "None",
+    "author": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    },
+    "recepient": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    }
+  },
+  {
+    "content": "Hello, I am Jack",
+    "sending_time": "2024-12-22 19:34:39.416214",
+    "receiving_time": "None",
+    "author": {
+      "id": 3,
+      "first_name": "Jack",
+      "last_name": "Doe",
+      "phone_number": "0987654321"
+    },
+    "recepient": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    }
+  },
+  {
+    "content": "How are you doing?",
+    "sending_time": "2024-12-22 19:34:39.416199",
+    "receiving_time": "None",
+    "author": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    },
+    "recepient": {
+      "id": 2,
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "phone_number": "0987654321"
+    }
+  },
+  {
+    "content": "Todo: finish homework",
+    "sending_time": "2024-12-22 19:34:39.416201",
+    "receiving_time": "None",
+    "author": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    },
+    "recepient": {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone_number": "1234567890"
+    }
+  }
+]
