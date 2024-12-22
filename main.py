@@ -8,6 +8,7 @@ User(first_name, last_name, phone_number)
 
 MessageSystem(messages):
     - додати метод, який буде діставати усі чати з нашої системи
+    - додати метод, який буде виводити усі повідомлення між двома користувачами
 '''
 
 class User:
@@ -37,10 +38,33 @@ class Message:
     def mark_message_as_read(self):
         self.receiving_time = datetime.now()
 
+    def __lt__(self, other) -> bool:
+        return self.sending_time < other.sending_time
+
+    def __str__(self):
+        return f"Message from [{self.author}] to [{self.recepient}] \n '{self.content} {self.sending_time}'"
+    
+    def __repr__(self):
+        return str(self)
+
 
 class MessageSystem(UserList):
     def __init__(self, messages: list[Message] = []):
         super().__init__(messages)
+
+    def get_messages_between_users(self, user_one: User, user_two: User) -> list[Message]:
+        messages_set = set()
+        # Перебрати усі повідомлення, які є в нашій системі
+        for message in self:
+            # В повідомленні потрібно дістати інформацію про відправника та отримувача
+            author, recepient = message.author, message.recepient
+            # Перевірити чи user_one є автором та user_two є отримувачем
+            if author == user_one and recepient == user_two:
+                messages_set.add(message)
+            # Перевірити чи user_two є автором та user_one є отримувачем
+            if author == user_two and recepient == user_one:
+                messages_set.add(message)
+        return sorted(list(messages_set))
 
     def get_all_chats(self, user: User) -> list[User]:
         user_set = set()
@@ -60,18 +84,30 @@ class MessageSystem(UserList):
 
 user_john = User("John", "Doe", "1234567890")
 user_jane = User("Jane", "Doe", "0987654321")
+user_jack = User("Jack", "Doe", "0987654321")
 
 message_one = Message("Hello, Jane!", user_john, user_jane)
 message_two = Message("Hello, John!", user_jane, user_john)
 message_three = Message("How are you doing?", user_john, user_jane)
 
 message_four = Message("Todo: finish homework", user_john, user_john)
+message_five = Message("Hello, I am Jack", user_jack, user_john)
 
-messages = [message_one, message_two, message_three, message_four]
+# messages = [message_one, message_two, message_three, message_four, message_five]
+messages = [message_two, message_one, message_four, message_five, message_three, message_four]
+# print(messages)
+# messages.sort()
+# print(messages)
 
-message_system = MessageSystem(messages)
-print(message_system.get_all_chats(user_john))
+# message_system = MessageSystem(messages)
+# print(message_system.get_all_chats(user_john))
+# print(message_system.get_messages_between_users(user_john, user_jane))
 
+# < > <= >= ==
+#<
+
+# message_four < message_five
+# message_four.__lt__(message_five)
 
 # my_list = [1, 2, 3, 4]
 # for i in my_list
@@ -89,3 +125,8 @@ print(message_system.get_all_chats(user_john))
 # hello, world = [3, 4]
 # print(hello)
 # print(world)
+
+# print({"hello", "world", "people"})
+
+# [1, 2, 3, 4]
+# 1 < 2, 2 < 3, 3 < 4
